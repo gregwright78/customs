@@ -1,0 +1,32 @@
+2017-05-17 01:00:30,004 ERROR [org.apache.solr.core.SolrCore] org.apache.solr.common.SolrException: openNewSearcher called on closed core
+	at org.apache.solr.core.SolrCore.openNewSearcher(SolrCore.java:1447)
+	at org.apache.solr.core.SolrCore.getRealtimeSearcher(SolrCore.java:1422)
+	at org.apache.solr.handler.component.RealTimeGetComponent.process(RealTimeGetComponent.java:170)
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:218)
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:135)
+	at org.alfresco.solr.SolrInformationServer.getTrackerInitialState(SolrInformationServer.java:1162)
+	at org.alfresco.solr.tracker.AbstractTracker.getTrackerState(AbstractTracker.java:287)
+	at org.alfresco.solr.tracker.AbstractTracker.track(AbstractTracker.java:178)
+	at org.alfresco.solr.tracker.TrackerJob.execute(TrackerJob.java:54)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:216)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:563)
+
+2017-05-17 01:00:30,008 ERROR [org.quartz.core.JobRunShell] Job Solr.ModelTracker-alfresco threw an unhandled Exception: 
+java.lang.NullPointerException
+	at org.alfresco.solr.SolrInformationServer.getTrackerInitialState(SolrInformationServer.java:1169)
+	at org.alfresco.solr.tracker.AbstractTracker.getTrackerState(AbstractTracker.java:287)
+	at org.alfresco.solr.tracker.AbstractTracker.track(AbstractTracker.java:178)
+	at org.alfresco.solr.tracker.TrackerJob.execute(TrackerJob.java:54)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:216)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:563)
+2017-05-17 01:00:30,009 ERROR [org.quartz.core.ErrorLogger] Job (Solr.ModelTracker-alfresco threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: java.lang.NullPointerException]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:227)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:563)
+Caused by: java.lang.NullPointerException
+	at org.alfresco.solr.SolrInformationServer.getTrackerInitialState(SolrInformationServer.java:1169)
+	at org.alfresco.solr.tracker.AbstractTracker.getTrackerState(AbstractTracker.java:287)
+	at org.alfresco.solr.tracker.AbstractTracker.track(AbstractTracker.java:178)
+	at org.alfresco.solr.tracker.TrackerJob.execute(TrackerJob.java:54)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:216)
+	... 1 more
